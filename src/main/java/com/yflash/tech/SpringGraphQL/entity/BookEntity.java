@@ -3,10 +3,12 @@ package com.yflash.tech.SpringGraphQL.entity;
 import com.yflash.tech.SpringGraphQL.common.CommonConstants;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -16,7 +18,7 @@ public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = CommonConstants.BOOK_ID, nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = CommonConstants.BOOK_TITLE, nullable = false)
     private String title;

@@ -1,5 +1,11 @@
 type Query {
     findAllBooks: [Book]!
+    countBooks: Int!
+}
+
+type Mutation {
+    newBook(title: String!, isbn: String!, pageCount: Int, author: ID!) : Book!
+    deleteBook(id: ID!) : Boolean!
 }
 
 type Book {
