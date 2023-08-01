@@ -1,0 +1,12 @@
+type Query {
+    findAllBooks: [Book]!
+}
+
+type Book {
+    id: ID!
+    title: String!
+    isbn: String!
+    pageCount: Int
+    author: Author
+}
+
