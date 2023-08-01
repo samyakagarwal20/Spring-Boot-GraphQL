@@ -33,3 +33,16 @@ The configuration are done within the file J**DBCConfig.java**
 ---
 
 Before running the application, please locate the **BOOKS-AND-AUTHOR.sql** file present in the root directory and execute the command either on your mysql client ar directly onto the MySQL workbench (the steps for accessing which are already present above)
+
+---
+## Enabling GraphQL Playground
+
+For GraphQL playground, we have already added the required dependency in pom.xml file. To further enable it we added the following properties in the application.yaml file 
+
+```
+graphql:
+  playground:    
+    enabled: true
+```
+
+Post that, we can simply run the application and access the playground directly by hitting http://localhost:8080/playground on the browser.
