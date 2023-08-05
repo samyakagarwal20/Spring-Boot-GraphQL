@@ -10,5 +10,8 @@ public interface BookService {
     long countBooks();
     BookEntity newBook(String title, String isbn, int pageCount, long authorId);
     boolean deleteBook(Long id);
+    boolean testBadRequestException();
+    boolean testCustomExceptionHandler();
+    boolean testRuntimeExceptionHandler();
 
 }

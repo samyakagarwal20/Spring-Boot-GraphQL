@@ -14,3 +14,8 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
+graphql:
+  servlet:
+    exception-handlers-enabled: true
+  playground:
+    enabled: true

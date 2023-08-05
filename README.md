@@ -46,3 +46,18 @@ graphql:
 ```
 
 Post that, we can simply run the application and access the playground directly by hitting http://localhost:8080/playground on the browser.
+
+---
+## Exception Handling with GraphQL
+
+By default, if any exception occurs in the graphql related resolvers or services, etc., then instead of showin our custom error messages, it displays **"Internal Server Error while executing the query"**. This is because of the default exception handler provided by GraphQL itself.
+
+To avoid it, we can enable our custom exception handlers using the ```graphql.servlet.exception-handlers-enabled: true``` in ```application.yaml``` file
+
+Once, we enable the custom excpetion handling, **we need to define our custom exception handlers** too which we can perform using ```@ExceptionHandler``` annotation.
+
+Now, we also need to **handle any other form of exception as well which might occur unexpectedly or else we would end up exposing the critical details to the end-user**. For this, we will add another handler method in the same class annotated with @ExceptionHandler which will account for any ```RuntimeException``` in the application with the message **"Internal Server Error"**.
+
+
+
+

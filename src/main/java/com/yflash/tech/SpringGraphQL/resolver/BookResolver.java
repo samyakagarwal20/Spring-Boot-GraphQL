@@ -31,4 +31,16 @@ public class BookResolver implements GraphQLQueryResolver, GraphQLMutationResolv
         return bookService.deleteBook(id);
     }
 
+    public boolean testBadRequestException() {
+        return bookService.testBadRequestException();
+    }
+
+    public boolean testCustomExceptionHandler() {
+        return bookService.testCustomExceptionHandler();
+    }
+
+    public boolean testRuntimeExceptionHandler() {
+        return bookService.testRuntimeExceptionHandler();
+    }
+
 }
