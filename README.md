@@ -58,6 +58,32 @@ Once, we enable the custom excpetion handling, **we need to define our custom ex
 
 Now, we also need to **handle any other form of exception as well which might occur unexpectedly or else we would end up exposing the critical details to the end-user**. For this, we will add another handler method in the same class annotated with @ExceptionHandler which will account for any ```RuntimeException``` in the application with the message **"Internal Server Error"**.
 
+---
+
+## Overriding Exception Handler provided by GraphQL
+
+Another alternative for exception handling is to create a custom exception handler class which implements the ```GraphQLErrorHandler``` interface which has only 2 methods:
+```
+default boolean errorsPresent(List<GraphQLError> errors)
+List<GraphQLError> processErrors(List<GraphQLError> errors)
+```
+
+Also, make sure to set ```graphql.servlet.exception-handlers-enabled: false``` in ```application.yaml``` file for this approach to work
+
+By doing so, all the exceptions will be intercepted by this custom exception handler.
+
+
+---
+## Exception Handling with GraphQL
+
+By default, if any exception occurs in the graphql related resolvers or services, etc., then instead of showin our custom error messages, it displays **"Internal Server Error while executing the query"**. This is because of the default exception handler provided by GraphQL itself.
+
+To avoid it, we can enable our custom exception handlers using the ```graphql.servlet.exception-handlers-enabled: true``` in ```application.yaml``` file
+
+Once, we enable the custom excpetion handling, **we need to define our custom exception handlers** too which we can perform using ```@ExceptionHandler``` annotation.
+
+Now, we also need to **handle any other form of exception as well which might occur unexpectedly or else we would end up exposing the critical details to the end-user**. For this, we will add another handler method in the same class annotated with @ExceptionHandler which will account for any ```RuntimeException``` in the application with the message **"Internal Server Error"**.
+
 
 
 
