@@ -16,6 +16,6 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 graphql:
   servlet:
-    exception-handlers-enabled: true
+    exception-handlers-enabled: false
   playground:
     enabled: true
