@@ -1,6 +1,9 @@
 type Query {
     findAllBooks: [Book]!
     countBooks: Int!
+    testBadRequestException: Boolean
+    testCustomExceptionHandler: Boolean
+    testRuntimeExceptionHandler: Boolean
 }
 
 type Mutation {
